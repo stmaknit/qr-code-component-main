@@ -21,6 +21,12 @@
 
     --letter-preset-1: 0;
     --letter-preset-2: 0.2px;
+
+    /* The Variable max-width can be used to change the width of the whole card
+
+    --max-width: 300px;
+
+    and it will still work*/
 }
 
 * {
