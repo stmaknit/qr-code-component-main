@@ -52,3 +52,25 @@ img, picture {
     max-width: 100%;
     display: block;
 }
+
+
+.flow > * + * {
+    /* Vertical Spacing: 
+    For each Child except the first it adds margin-top: --flow-space
+    The Default Value is 1em
+    margin-block-start acts the same as margin-top in a horizontal left-to-right context*/
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.challenge-wrapper {
+    --max-child-width: var(--max-width, 320px);
+
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    /* Centering with padding: 
+    50% of the page - padding (left and right) 
+    to center the card*/
+    padding: var(--space-300)
+     max(var(--space-300), calc(50% - var(--max-child-width) / 2));
+}
