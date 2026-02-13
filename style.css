@@ -74,3 +74,47 @@ img, picture {
     padding: var(--space-300)
      max(var(--space-300), calc(50% - var(--max-child-width) / 2));
 }
+
+.card {
+    --flow-space: var(--space-300);
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-200) var(--space-200) var(--space-500);
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.0477);
+}
+
+.card__image {
+    border-radius: var(--radius-sm);
+    /*The Image overlaps the Radius
+    Therefore you have to hide the Overflow to see the border-radius on the image*/
+     overflow: hidden;
+     /* Aspect Ratio on the Container of the Image instead of the image
+     If you switch the Image to something where height > width or width > height
+     then it should still work*/
+     aspect-ratio: 1/1;  
+
+
+     /* Targets only the img inside the Container and not the other images in the file */
+     img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    } 
+}
+
+/* Alternativ to the nesting above: 
+.card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+This will do the same*/
+
+.card__content {
+    padding-inline: var(--space-200);
+    text-align: center;
+
+    > * {
+        --flow-space:var(--space-200);
+    }
+}
